@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+        >
+<h:body>
+    <h:form>
+        <p:panel id="panel" header="Person" style="margin-bottom:10px;">
+            <p:messages id="messages" />
+            <h:panelGrid columns="3">
+                <h:outputLabel for="firstname" value="Input name: *" />
+                <p:inputText id="firstname"
+                             required="true">
+                    <f:validateLength minimum="2" />
+                </p:inputText>
+                <p:message for="firstname" />
+            </h:panelGrid>
+        </p:panel>
+
+        <p:commandButton value="Ajax Submit" update="panel" id="ajax"
+                         styleClass="ui-priority-primary"/>
+    </h:form>
+</h:body>
+</html>
